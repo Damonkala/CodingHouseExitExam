@@ -3,7 +3,7 @@
 var app = angular.module('finalExam', ['ui.router', 'ngCookies', 'angular-jwt']);
 
 app.constant('ENV', {
-	API_URL: 'https://guarded-dawn-46437.herokuapp.com/'
+	API_URL: 'https://guarded-dawn-46437.herokuapp.com'
 });
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
