@@ -1,0 +1,28 @@
+{
+  "name": "test-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "postinstall": "bower i"
+  },
+  "engines": {
+    "node": "4.2.6"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^0.8.5",
+    "body-parser": "^1.15.0",
+    "bower": "^1.7.7",
+    "cookie-parser": "^1.4.1",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "jwt-simple": "^0.4.1",
+    "moment": "^2.11.2",
+    "mongoose": "^4.4.3",
+    "morgan": "^1.6.1"
+  }
+}

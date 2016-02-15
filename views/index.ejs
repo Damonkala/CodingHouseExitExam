@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <base href="/"> -->
+    <title>Test App</title>
+
+    <link rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css'/>
+    <link rel='stylesheet' href='/css/style.css'/>
+
+    <script src='/bower_components/jquery/dist/jquery.min.js'></script>
+    <script src='/bower_components/angular/angular.js'></script>
+    <script src='/bower_components/angular-ui-router/release/angular-ui-router.js'></script>
+    <script src='/bower_components/bootstrap/dist/js/bootstrap.min.js'></script>
+
+    <script src='/js/module.js'></script>
+    <script src='/js/config.js'></script>
+    <script src='/js/controllers/navCtrl.js'></script>
+
+  </head>
+  <body ng-app='testApp'>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-default" ng-controller='navbarCtrl'>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" ui-sref="home">Test App</a>
+          <a class="navbar-brand" ui-sref="login">Login</a>
+          <a class="navbar-brand" ui-sref="register">Register</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a ui-sref="home">Home</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <ui-view></ui-view>
+  <script src="js/controllers/loginController.js"></script>
+  <script src="js/controllers/registerController.js"></script>
+  </body>
+</html>
