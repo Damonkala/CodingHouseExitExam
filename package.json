@@ -24,7 +24,6 @@
     "jwt-simple": "^0.4.1",
     "moment": "^2.11.2",
     "mongoose": "^4.4.3",
-    "morgan": "^1.6.1",
-    "unirest": "^0.4.2"
+    "morgan": "^1.6.1"
   }
 }

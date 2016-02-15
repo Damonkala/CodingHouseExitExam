@@ -3,7 +3,7 @@
 var app = angular.module('finalExam', ['ui.router', 'ngCookies', 'angular-jwt']);
 
 app.constant('ENV', {
-	API_URL: 'http://localhost:3000'
+	API_URL: 'https://localhost:3000'
 });
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
