@@ -15,7 +15,8 @@ router.post('/register', function(req, res){
 })
 
 router.post('/login', function(req, res){
-  User.login(req.body, function(err, user){
+    console.log("AUTHENTICATING ", req.body);
+  User.authenticate(req.body, function(err, user){
     if(user){
       var token = jwt.encode(user, process.env.JWT_SECRET);
       res.cookie('token', token).send('login succesfull')

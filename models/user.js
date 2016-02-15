@@ -1,6 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt');
 var jwt = require('jwt-simple');
 var moment = require('moment');
@@ -8,7 +9,7 @@ var JWT_SECRET = process.env.JWT_SECRET;
 
 var User;
 
-var userSchema = mongoose.Schema({
+var userSchema = Schema({
   email: { type: String, required: true },
   password: { type: String, required: true },
   beer: {type: Schema.Types.ObjectId, ref: "Beer"}
@@ -35,8 +36,11 @@ userSchema.statics.register = function(user, cb) {
 };
 
 userSchema.statics.authenticate = function(inputUser, cb){
+  console.log("AUTHENTICATING ", inputUser);
   User.findOne({email: inputUser.email}, function(err, dbUser) {
+    console.log("DB USER?", dbUser);
     if(err || !dbUser) return cb(err || 'Incorrect email or password.');
+    console.log("First BARRIER PASSED");
     bcrypt.compare(inputUser.password, dbUser.password, function(err, isGood){
       if(err || !isGood) return cb(err || 'Incorrect email or password.');
       dbUser.password = null;

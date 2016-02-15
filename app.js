@@ -10,7 +10,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 
-var mongoUrl = process.env.MONGOLAB_URI || 'mongodb://localhost/testapp';
+var mongoUrl = process.env.MONGOLAB_URI || 'mongodb://localhost/finalExam';
 
 mongoose.connect(mongoUrl, function(err){
   if(err) return console.error(`Error connecting to Mongodb: ${err}`);
@@ -29,6 +29,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', require('./routes/index'));
+app.use('/user', require('./routes/user'));
 
 app.use(function(req, res){
   res.status(404).render('404');
