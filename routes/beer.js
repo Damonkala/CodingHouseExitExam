@@ -31,7 +31,7 @@ router.post('/saveBeer', function(req, res){
   })
 })
 router.post('/unsampleBeer', function(req, res){
-	console.log("EFADSDA,",req.body);
+	console.log("ANYTHING?");
 	Beer.findByIdAndRemove(req.body, function(err, beer) {
     if(err){
       res.status(400).send(err);
