@@ -13,9 +13,12 @@ router.post('/register', function(req, res){
     res.send(user)
   })
 })
-
+router.get('/', function(req,res){
+  User.find({}, function(err, users){
+    res.send(users);
+  })
+})
 router.post('/login', function(req, res){
-    console.log("AUTHENTICATING ", req.body);
   User.authenticate(req.body, function(err, user){
     if(user){
       var token = jwt.encode(user, process.env.JWT_SECRET);

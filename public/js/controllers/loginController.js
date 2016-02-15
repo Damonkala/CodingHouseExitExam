@@ -7,6 +7,7 @@ app.controller('loginCtrl', function($scope, $state, $rootScope, UserService) {
 		UserService.login(user)
 		.then(function(res){
 			if(res.data=="login successfull"){
+				alert("IT is done")
 				UserService.loggedIn = 'true';
 				$state.go('randoBeers')
 			} else if (res.data === "Incorrect Username or Password!"){

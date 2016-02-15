@@ -36,12 +36,11 @@ userSchema.statics.register = function(user, cb) {
 };
 
 userSchema.statics.authenticate = function(inputUser, cb){
-  console.log("AUTHENTICATING ", inputUser);
   User.findOne({email: inputUser.email}, function(err, dbUser) {
-    console.log("DB USER?", dbUser);
     if(err || !dbUser) return cb(err || 'Incorrect email or password.');
     console.log("First BARRIER PASSED");
     bcrypt.compare(inputUser.password, dbUser.password, function(err, isGood){
+    console.log("Second BARRIER PASSED");
       if(err || !isGood) return cb(err || 'Incorrect email or password.');
       dbUser.password = null;
       cb(null, dbUser);
