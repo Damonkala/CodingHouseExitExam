@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "postinstall": "bower i && npm i"
+    "install": "npm i",
+    "postinstall": "bower i"
   },
   "engines": {
     "node": "4.2.6"
