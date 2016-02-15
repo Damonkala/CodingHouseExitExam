@@ -1,10 +1,10 @@
 'use strict';
 
-var app = angular.module('testApp');
+var app = angular.module('finalExam');
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', { url: '/', templateUrl: '/html/home.html' })
-    
+
   $urlRouterProvider.otherwise('/');
 });
