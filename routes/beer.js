@@ -5,7 +5,21 @@ var router = express.Router();
 
 var isAuthorized = require('../config/auth')
 var Beer = require('../models/Beer');
+var BEER_SECRET = process.env.BEER_SECRET;
 
+
+var unirest = require('unirest');
+
+
+router.get('/randomBeer', function(req, res){
+	console.log("BOY HOWDEy");
+	unirest.get(`http://api.brewerydb.com/v2/beer/random?key=${BEER_SECRET}`)
+	.header("Accept", "application/json")
+	.end(function (result) {
+		console.log("send it back:", result.body);
+		res.send(result.body);
+	});
+})
 
 // router.post('/register', function(req, res){
 //   User.register(req.body, function(err, user){

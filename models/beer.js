@@ -2,6 +2,7 @@
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var BEER_SECRET = process.env.BEER_SECRET;
 
 var Beer;
 

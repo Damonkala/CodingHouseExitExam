@@ -9,7 +9,7 @@ app.controller('loginCtrl', function($scope, $state, $rootScope, UserService) {
 			if(res.data=="login successfull"){
 				alert("IT is done")
 				UserService.loggedIn = 'true';
-				$state.go('randoBeers')
+				$state.go('randomBeer')
 			} else if (res.data === "Incorrect Username or Password!"){
 				alert("Incorrect Email or Password")
 			}
