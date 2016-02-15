@@ -32,7 +32,7 @@ router.post('/saveBeer', function(req, res){
 })
 router.post('/unsampleBeer', function(req, res){
 	console.log("ANYTHING?");
-	Beer.findByIdAndRemove(req.body, function(err, beer) {
+	Beer.findByIdAndRemove(req.body._id, function(err, beer) {
     if(err){
       res.status(400).send(err);
     }
