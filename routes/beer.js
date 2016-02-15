@@ -21,11 +21,11 @@ router.get('/randomBeer', function(req, res){
 	});
 })
 
-// router.post('/register', function(req, res){
-//   User.register(req.body, function(err, user){
-//     res.send(user)
-//   })
-// })
+router.post('/saveBeer', function(req, res){
+  Beer.save(req.body, function(err, user){
+    res.send(user)
+  })
+})
 // router.get('/', function(req,res){
 //   User.find({}, function(err, users){
 //     res.send(users);

@@ -15,9 +15,20 @@ app.controller('randomBeerCtrl', function($scope, $state, $rootScope, UserServic
 	})
 	$scope.getRandomBeer = function(){
 		BeerService.randomBeer()
-		.then(function(data){
-			console.log("ALL THIS DATA", data);
+		.then(function(res){
+			$scope.beer = res.data.data;
+			console.log("Heres our data", $scope.beer);
 		})
 	}
-
+	$scope.sample = function(){
+		var newBeer = {}
+		newBeer.name = $scope.beer.name;
+		newBeer.id = $scope.beer.id;
+		newBeer.id = $scope.beer.id;
+		newBeer.id = $scope.beer.id;
+		BeerService.sampleABeer($scope.beer)
+		.then(function(res){
+			console.log(" RESPONSME", res);
+		})
+	}
 });

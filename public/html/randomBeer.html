@@ -1,4 +1,15 @@
 <div class="container">
   <h1>Random beer generated here</h1>
   <button ng-click="getRandomBeer()">GET BEER!</button>
+  <h1>
+  Name: {{beer.name}}
+  </h1>
+  <h2>
+  ID: {{beer.id}}
+  Is organic: {{beer.isOrganic}}
+  </h2>
+  <blockquote>
+  {{beer.style.description}}
+  </blockquote>
+  <button ng-click="sample()">Sample</button>
 </div>

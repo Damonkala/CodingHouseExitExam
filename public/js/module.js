@@ -27,7 +27,6 @@ app.controller('MasterController', function(UserService, $cookies, jwtHelper, $s
   .then(function(res , err){
     console.log(res.data)
     if (res.data !== "authRequired"){
-    $state.go('usersList');
     $scope.isLoggedIn = true;
     console.log("LOGGED IN!")
   } else {
