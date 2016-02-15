@@ -13,4 +13,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 	// .state('home', {url: '/', templateUrl: 'views/home/home.html', controller: 'homeCtrl'})
 	.state('login', {url: '/login', templateUrl: 'html/login.html', controller: 'loginCtrl'})
 	.state('register', {url: '/register', templateUrl: 'html/register.html', controller: 'registerCtrl'})
+	.state('randomBeer', {url: '/randomBeer', templateUrl: 'html/randomBeer.html', controller: 'randomBeerCtrl'})
+	.state('sampledBeer', {url: '/sampledBeer', templateUrl: 'html/sampledBeer.html', controller: 'sampledBeerCtrl'})
 })

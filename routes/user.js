@@ -3,6 +3,7 @@
 var express = require('express')
 var router = express.Router();
 
+var isAuthorized = require('../config/auth')
 var User = require('../models/User');
 
 var jwt = require('jwt-simple');
@@ -28,6 +29,14 @@ router.post('/login', function(req, res){
     }
   })
 })
+router.post('/isAuthed', isAuthorized ,function(req, res){
+  console.log('is logged in')
+  console.log(req.body.token)
+  res.send('is logged in')
+})
+
+module.exports = router;
+
 
 
 
