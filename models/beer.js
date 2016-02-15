@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 
 var Beer;
 
-var userSchema = Schema({
+var beerSchema = Schema({
   name: { type: String, required: true },
   description: { type: String, required: true },
   rating: {type: Number},

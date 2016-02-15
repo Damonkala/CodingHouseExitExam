@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('finalExam', ['ui.router']);
+var app = angular.module('finalExam', ['ui.router', 'ngCookies', 'angular-jwt']);
 
 app.constant('ENV', {
 	API_URL: 'http://localhost:3000'

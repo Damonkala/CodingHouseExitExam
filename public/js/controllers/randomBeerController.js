@@ -2,7 +2,7 @@
 
 var app = angular.module('finalExam');
 
-app.controller('randomBeerCtrl', function($scope, $state, $rootScope, UserService, $cookies) {
+app.controller('randomBeerCtrl', function($scope, $state, $rootScope, UserService, $cookies, jwtHelper, $location, BeerService) {
 	var cookies = $cookies.get('token');
 	if(cookies){
 		$scope.userInfo = (jwtHelper.decodeToken(cookies))
@@ -13,5 +13,8 @@ app.controller('randomBeerCtrl', function($scope, $state, $rootScope, UserServic
 		 if (res.data === "authRequired"){$location.path('/login')}
 		 else{$scope.isLoggedIn = true;}
 	})
+	$scope.getRandomBeer = function(){
+		BeerService.randomBeer()
+	}
 
 });

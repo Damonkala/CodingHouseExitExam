@@ -36,8 +36,3 @@ router.post('/isAuthed', isAuthorized ,function(req, res){
 })
 
 module.exports = router;
-
-
-
-
-module.exports = router;

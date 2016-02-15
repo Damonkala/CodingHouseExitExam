@@ -2,7 +2,7 @@
 
 var app = angular.module('finalExam');
 
-app.controller('sampledBeerCtrl', function($scope, $state, $rootScope, UserService, $cookies) {
+app.controller('sampledBeerCtrl', function($scope, $state, $rootScope, UserService, $cookies, jwtHelper, $location) {
 	var cookies = $cookies.get('token');
 	if(cookies){
 		$scope.userInfo = (jwtHelper.decodeToken(cookies))
