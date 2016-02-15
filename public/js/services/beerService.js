@@ -14,5 +14,9 @@ app.service('BeerService', function($http, ENV, $location, $rootScope){
 	this.getAllBeer = function(beer){
 		return $http.get(`${ENV.API_URL}/beer/getAllBeer`, beer);
 	}
+	this.unsampleBeer = function(beer){
+		console.log("SDHASDASDASHDBJABDSHGASKFLhsdf");
+		return $http.post(`${ENV.API_URL}/beer/unsampleBeer`, beer)
+	}
 
 })

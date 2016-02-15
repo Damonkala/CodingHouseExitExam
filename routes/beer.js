@@ -30,6 +30,17 @@ router.post('/saveBeer', function(req, res){
     res.send(user)
   })
 })
+router.post('/unsampleBeer', function(req, res){
+	console.log("EFADSDA,",req.body);
+	Beer.findByIdAndRemove(req.body, function(err, beer) {
+    if(err){
+      res.status(400).send(err);
+    }
+    Beer.find({}, function(err, beer){
+      res.status(err ? 400 : 200).send(err || beer)
+    })
+  })
+})
 
 
 module.exports = router;

@@ -25,6 +25,7 @@ beerSchema.statics.save = function(beer, cb) {
     if(err || beer) return cb(err || 'Beer already sampled');
     var newBeer = new Beer();
     newBeer.name = name;
+    newBeer.id = id;
     newBeer.description = description;
     newBeer.isOrganic = isOrganic;
     newBeer.save(function(err, savedBeer){

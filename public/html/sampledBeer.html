@@ -1,7 +1,6 @@
 <div class="container">
   <h1>sampledBeer list here</h1>
 </div>
-
 <table>
   <thead>
     <tr>
@@ -17,22 +16,28 @@
       <td>
         description
       </td>
+      <td>
+        Unsample?
+      </td>
     </tr>
   </thead>
   <tbody ng-repeat="beer in beers track by $index">
     <tr>
-      <!-- <td>
+      <td>
         {{beer.name}}
-      </td> -->
+      </td>
       <td>
         {{beer.id}}
       </td>
-      <!-- <td>
+      <td>
         {{beer.isOrganic}}
       </td>
       <td>
         {{beer.description}}
-      </td> -->
+      </td>
+      <td>
+        <button ng-click="unsample(beer._id)">Unsample Beer</button>
+      </td>
     </tr>
   </tbody>
 </table>

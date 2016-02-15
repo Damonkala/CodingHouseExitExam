@@ -19,4 +19,12 @@ app.controller('sampledBeerCtrl', function($scope, $state, $rootScope, UserServi
 	}, function(err){
 		console.log(err);
 	})
+	$scope.unsample = function(beer){
+		BeerService.unsampleBeer(beer)
+		.then(function(res){
+			console.log("REASDSDA", res);
+		}, function(err){
+			console.log(err);
+		})
+	}
 });
