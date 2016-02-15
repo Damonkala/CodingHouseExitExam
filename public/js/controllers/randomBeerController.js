@@ -24,11 +24,11 @@ app.controller('randomBeerCtrl', function($scope, $state, $rootScope, UserServic
 		var newBeer = {}
 		newBeer.name = $scope.beer.name;
 		newBeer.id = $scope.beer.id;
-		newBeer.id = $scope.beer.id;
-		newBeer.id = $scope.beer.id;
-		BeerService.sampleABeer($scope.beer)
+		newBeer.isOrganic = $scope.beer.isOrganic;
+		newBeer.description = $scope.beer.style.description;
+		BeerService.sampleABeer(newBeer)
 		.then(function(res){
-			console.log(" RESPONSME", res);
+			$scope.getRandomBeer();
 		})
 	}
 });

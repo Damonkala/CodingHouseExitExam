@@ -9,6 +9,10 @@ app.service('BeerService', function($http, ENV, $location, $rootScope){
 		return $http.get(`${ENV.API_URL}/beer/randomBeer`);
 	};
 	this.sampleABeer = function(beer){
-		return $http.post(`${ENV.API_URL}/beer/randomBeer`, beer);
+		return $http.post(`${ENV.API_URL}/beer/saveBeer`, beer);
 	}
+	this.getAllBeer = function(beer){
+		return $http.get(`${ENV.API_URL}/beer/getAllBeer`, beer);
+	}
+
 })

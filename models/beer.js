@@ -11,6 +11,7 @@ var beerSchema = Schema({
   description: { type: String, required: true },
   rating: {type: Number},
   isOrganic: {type: String},
+  id: {type: String},
   review: {type: String}
 });
 
@@ -21,7 +22,7 @@ beerSchema.statics.save = function(beer, cb) {
   var isOrganic = beer.isOrganic;
 
   Beer.findOne({id: id}, function(err, beer){
-    if(err || user) return cb(err || 'Beer already sampled');
+    if(err || beer) return cb(err || 'Beer already sampled');
     var newBeer = new Beer();
     newBeer.name = name;
     newBeer.description = description;
